@@ -36,15 +36,18 @@
       <div class='col-sm-5'>
         <div class='form-group'>
 
-          <label><strong>Genre</strong></label>
-
+          <label class="col-sm-2 control-label"><strong>Genre</strong></label>
+          <div class="col-sm-10">
+            <%= f.select :genre_ids,
+             @genres.map {|g| [g.name,g.id] }, {}, {multiple: true} %>
+          </div>
           <%# @genres.each do |genre| %>
-            <div class="checkbox">
+           <!-- <div class="checkbox">
               <label>
                 <%#= check_box_tag 'book[genre_ids][]', genre.id %> <%#= genre.name %>
               </label>
-            </div>
-          <%# end %>
+            </div> 
+          <%# end %> -->
         </div>
 
         <br>

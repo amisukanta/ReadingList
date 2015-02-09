@@ -10,7 +10,7 @@ class Book < ActiveRecord::Base
 	# RATHER GOING TO RETURN ALL 
 	scope :search, ->(keyword){where('keywords LIKE ?', "%#{keyword.downcase}%") if keyword.present? }
 	
-    scope :filter, ->(name){ joins(:genres).where('genres.name = ?', name) if name.present? }
+        scope :filter, ->(name){ joins(:genres).where('genres.name = ?', name) if name.present? }
 
 	before_save :set_keywords
 
